@@ -1,0 +1,16 @@
+{
+  "name": "mymedia-api",
+  "version": "1.0.0",
+  "description": "It's the api of mymedia",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mariadb": "^3.0.0",
+    "sequelize": "^6.17.0"
+  }
+}
