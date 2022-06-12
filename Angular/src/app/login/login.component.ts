@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(f:NgForm){
+  Login(f:NgForm){
     this.http.post('http://localhost:8000/user/', f.value)
       .subscribe(((res:any)=>{
         localStorage.setItem("id",res.id)
@@ -23,5 +23,19 @@ export class LoginComponent implements OnInit {
         console.log(err)
       }
     )
+  }
+  Signup(f:NgForm):void{
+    this.http.post('http://localhost:8000/users/', f.value)
+      .subscribe(((res:any)=>{
+        localStorage.setItem("id",res.id)
+        this.router.navigateByUrl("home")
+      }),
+      err=>{
+        console.log(err)
+      }
+    )
+  }
+  getBack(){
+    this.router.navigateByUrl("")
   }
 }

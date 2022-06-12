@@ -1,0 +1,16 @@
+header{
+    background-color: aqua;
+    display: flex;
+    position: absolute;
+    top:0;
+    height: 10%;
+    width: 100%;
+}
+header #left{
+    background-color: red;
+    margin-right: 10px;
+}
+content{
+    position: absolute;
+    top:10%;
+}

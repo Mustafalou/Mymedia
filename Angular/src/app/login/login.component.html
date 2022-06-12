@@ -1,6 +1,12 @@
-<h1>Login</h1>
-<form (ngSubmit)="onSubmit(f)"  #f="ngForm">
-    <label>UserName</label><input  name="username" [(ngModel)]="user.username"><br>
-    <label>PassWord</label><input  name="password" type="password" [(ngModel)]="user.password"><br>
-    <button type="submit"> Log in </button>
-</form>
+<header>
+    <div id="left"><button (click)="getBack()">Mymedia</button></div>
+</header>
+<content>
+    <h1>Login</h1>
+    <form #f="ngForm">
+        <label>UserName</label><input  name="username" [(ngModel)]="user.username"><br>
+        <label>PassWord</label><input  name="password" type="password" [(ngModel)]="user.password"><br>
+        <button type="submit" (click)="Login(f)"> Log In </button>
+        <button type="submit" (click)="Signup(f)"> Sign Up</button>
+    </form>
+</content>

@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Mymedia';
-  components = [
-    {
-      "name":"login"
+  logged= localStorage.getItem("id") ? true: false;
+  log(){
+    if(this.logged){
+      localStorage.removeItem("id")
+      this.logged=false
+      window.location.href=""
+    }else{
+      window.location.href="login"
     }
-  ]
+  }
 }
