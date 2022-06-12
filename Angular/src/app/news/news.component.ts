@@ -11,6 +11,7 @@ export class NewsComponent implements OnInit {
   constructor(private http:HttpClient,private router: Router) { }
 
   ngOnInit(): void {
+    localStorage.removeItem("id")
   }
   LogIn(){
     this.router.navigateByUrl('login')
