@@ -4,13 +4,13 @@
   "description": "It's the api of mymedia",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
     "mariadb": "^3.0.0",
-    "sequelize": "^6.17.0"
+    "sequelize": "^6.20.0"
   }
 }
