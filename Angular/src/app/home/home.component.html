@@ -1,8 +1,29 @@
 <header>
     <div id="left"><button (click)="getBack()">Mymedia</button></div>
     <div id="left"><button (click)='LogOut()'>log out</button></div>
+    <div> user : {{user.username}}#{{user.id}}
+    <form #f="ngForm">
+      <label>Add Friend</label>
+      <input name="friend_user" type="text" ngModel>
+      <input type="submit" (click)="addFriend(f)" value="Add">
+    </form>
+  </div>
 </header>
 <content>
-  <p>home works!</p>
+  <div id="left">
+    <div>
+      <label>Friends</label>
+    </div>
+    <div *ngFor="let friend of friends">
+      <button >
+        {{friend.username}}
+      </button>
+    </div>
+  </div>
+  <div id="right">
+    <div>
+      <label>Wall</label>
+    </div>
+  </div>
 </content>
 

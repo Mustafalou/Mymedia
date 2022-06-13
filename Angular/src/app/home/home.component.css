@@ -10,7 +10,21 @@ header #left{
     background-color: red;
     margin-right: 10px;
 }
-content{
+
+content #left{
     position: absolute;
+    flex-direction: column;
     top:10%;
+    width: 10%;
+    height: 90%;
+    background-color: blue;
+}
+content #right{
+    position: absolute;
+    flex-direction: column;
+    top:10%;
+    left: 10%;
+    width: 90%;
+    height: 90%;
+    background-color: grey;
 }
