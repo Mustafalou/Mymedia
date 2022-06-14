@@ -1,5 +1,5 @@
 const Post = require("../models/Post")
-const User = require("../models/User")
+const {User} = require("../models/User")
 exports.addPost = async function(req,res){
     const id= req.params.id
     let post = await Post.create({ message: req.body.message})
