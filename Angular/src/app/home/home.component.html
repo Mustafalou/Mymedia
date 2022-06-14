@@ -15,15 +15,35 @@
       <label>Friends</label>
     </div>
     <div *ngFor="let friend of friends">
-      <button >
+      <button (click)="showMessages(friend)">
         {{friend.username}}
       </button>
     </div>
   </div>
-  <div id="right">
-    <div>
+  <div id="right_top" style="height:50%">
+    <div >
       <label>Wall</label>
+      <div>
+        <form #fPost="ngForm">
+          <textarea style="width:95%;height:100px;margin-left:2% ;" name="message" ngModel></textarea>
+          <input type="submit" style="margin-left: 2%;" (click)="addPost(fPost)" value="Send">
+        </form>
+      </div>
     </div>
+    <div *ngFor="let data of posts">
+      <div *ngFor="let post of  data.posts.reverse()">
+        <p style="margin-left:2% ;">
+          {{data.username}} : {{post.message}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="right_bot">
+    <label>message</label>
+    <div id = "messages"></div>
+    <form #fmessage="ngForm" id = "sender">
+      <textarea style="width:90%;margin-left:2%" name="message" ngModel></textarea><input type="submit" (click)="sendMessage(fmessage)">
+    </form>
   </div>
 </content>
 

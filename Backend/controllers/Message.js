@@ -2,9 +2,20 @@ const Message = require("../models/Message")
 const {User,Friend} = require("../models/User")
 
 exports.getMessages = async function(req,res){
-    let friend = await Friend.findOne({where:{id:req.params.id}})
+    let friend = await Friend.findOne({where:{user_id:req.params.id,friend_id:req.params.idfriend}})
     if(!friend){
-        res.status(500).json({err:"friend not found"})
+        friend = await Friend.findOne({where:{user_id:req.params.idfriend,friend_id:req.params.id}})
+
+        if(!friend) res.status(500).json({err:"friend not found"})
+        else{
+            friend.getMessages()
+            .then(data=>{
+                res.status(200).json(data)
+            })
+            .catch(err=>{
+                res.status(500).json({err:err.message})
+            })
+        }
     }
     else{
         friend.getMessages()

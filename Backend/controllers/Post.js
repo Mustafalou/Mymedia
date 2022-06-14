@@ -23,7 +23,7 @@ exports.getPosts = function(req,res){
     const id = req.params.id
     User.findOne({where:{id:id},include:Post})
     .then(data=>{
-        res.status(200).json(data.posts)
+        res.status(200).json(data)
     })
     .catch(err=>{
         res.status(500).json({err:err.message})

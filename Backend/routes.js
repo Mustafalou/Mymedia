@@ -14,6 +14,6 @@ router.post('/users',UserController.AddUser)
 router.post('/posts/:id',PostController.addPost)
 router.get('/posts/:id',PostController.getPosts)
 
-router.get('/messages/:id',MessageController.getMessages)
+router.get('/messages/:id/:idfriend',MessageController.getMessages)
 router.post('/messages/:id',MessageController.addMessage)
 module.exports = router

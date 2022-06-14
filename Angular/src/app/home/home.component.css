@@ -14,17 +14,34 @@ header #left{
 content #left{
     position: absolute;
     flex-direction: column;
+    overflow-y: auto;
     top:10%;
     width: 10%;
     height: 90%;
     background-color: blue;
 }
-content #right{
+content #right_top{
     position: absolute;
     flex-direction: column;
     top:10%;
     left: 10%;
     width: 90%;
-    height: 90%;
+    height: 50%;
+    overflow-y: auto;
     background-color: grey;
+}
+content #right_bot{
+    position: absolute;
+    flex-direction: column;
+    top:60%;
+    left: 10%;
+    width: 90%;
+    height: 40%;
+    overflow-y: auto;
+    background-color: green;
+}
+content #right_bot #sender{
+    position: absolute;
+    width:90%;
+    bottom:0;
 }
